@@ -1,0 +1,23 @@
+{
+  "name": "graphrc",
+  "version": "0.0.1",
+  "description": "console graph maker",
+  "main": "index.js",
+  "scripts":{
+      "test": "node test.js"
+  },
+  "repository":{
+      "type": "git",
+      "url": "https://github.com/Soldy/graphrc.git"
+  },
+  "keywords":[],
+  "author": "Soldy",
+  "license": "GPLv3",
+  "bugs": {
+      "url": "https://github.com/Soldy/graphrc/issues"
+  },
+  "homepage": "https://github.com/Soldy/graphrc#readme",
+  "devDependencies":{
+      "nanoTest": "0.9.9-beta8"
+  }
+}
