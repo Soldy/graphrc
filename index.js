@@ -72,7 +72,7 @@ const graphBase = function(){
         endNumber = 0;
         diffNumber = 0; 
         outData = [];
-        perNumber = 0,;
+        perNumber = 0;
         minus = 0;
     }
     let bar = [
@@ -101,9 +101,9 @@ const graphBase = function(){
     let minNumber = 0;
     let maxNumber = 0;
     let endNumber = 0;
-    let diffNumber = 0; 
+    let diffNumber = 0;
     let outData = [];
-    let perNumber = 0,;
+    let perNumber = 0;
     let minus = 0;
 
 }
