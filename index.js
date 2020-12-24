@@ -1,7 +1,22 @@
-'use strict'
+'use strict';
 
 const graphBase = function(){
+    /*
+     * @param {array} barData 
+     * @param {integer} startNumber
+     * @prublic
+     * @retrun {string} graph
+     */
     this.render = function(barData, startNumber){
+        return render(barData, startNumber);
+    };
+    /*
+     * @param {array} barData 
+     * @param {integer} startNumber
+     * @private
+     * @retrun {string} graph
+     */
+    const render =  function(barData, startNumber){
         reset();
         startNumber = startNumber || 0;
 
@@ -37,36 +52,39 @@ const graphBase = function(){
         for (let i = startNumber; barData.length > i; i++) {
             outData.push((parseInt(barData[i]) - minNumber) / perNumber);
         }
-        line = " \u25B2";
+        line = ' \u25B2';
         for (let i = 0; 60 > i; i++) {
-            line += " ";
+            line += ' ';
         }
-        graph.push(line+"  ");
+        graph.push(line+'  ');
         for (let i = 0; 14 > i; i++) {
-            line = " \u2502";
+            line = ' \u2502';
             for (let iL = 0; 60 > iL; iL++) {
                 minus = parseInt(outData[iL]) - ((14 - i) * 8);
                 if (1 > minus)
                     minus = 0;
                 if (minus > 7)
                     minus = 8;
-                if (typeof outData[iL] === "undefined")
+                if (typeof outData[iL] === 'undefined')
                     minus = 0;
                 line += barb[minus];
 
             }
-            graph.push(line+"  ");
+            graph.push(line+'  ');
         }
-        line = " \u2514";
+        line = ' \u2514';
         for (let i = 0; 60 > i; i++) {
-            line += "\u2500";
+            line += '\u2500';
         }
 
-        line += "\u25B6 ";
-        graph.push(line)
+        line += '\u25B6 ';
+        graph.push(line);
         return graph;
-    }
-    let reset = function(){
+    };
+    /*
+     * @private
+     */
+    const reset = function(){
         minNumber = 0;
         maxNumber = 0;
         endNumber = 0;
@@ -74,30 +92,38 @@ const graphBase = function(){
         outData = [];
         perNumber = 0;
         minus = 0;
-    }
-    let bar = [
-        " ",
-        "\u2581",
-        "\u2583",
-        "\u2584",
-        "\u2585",
-        "\u2586",
-        "\u2587",
-        "\u2588",
+    };
+    /*
+     * @private
+     * @var array
+     */
+    const bar = [
+        ' ',
+        '\u2581',
+        '\u2583',
+        '\u2584',
+        '\u2585',
+        '\u2586',
+        '\u2587',
+        '\u2588',
     ];
-    let barb = [
-        " ",
-        "\u2581",
-        "\u2582",
-        "\u2583",
-        "\u2584",
-        "\u2585",
-        "\u2586",
-        "\u2587",
-        "\u2588",
+    /*
+     * @private
+     * @var array
+     */
+    const barb = [
+        ' ',
+        '\u2581',
+        '\u2582',
+        '\u2583',
+        '\u2584',
+        '\u2585',
+        '\u2586',
+        '\u2587',
+        '\u2588',
     ];
     let graph = [];
-    let line = " \u25B2";
+    let line = ' \u25B2';
     let minNumber = 0;
     let maxNumber = 0;
     let endNumber = 0;
@@ -106,7 +132,7 @@ const graphBase = function(){
     let perNumber = 0;
     let minus = 0;
 
-}
+};
 
 
 
