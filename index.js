@@ -4,7 +4,7 @@ const graphBase = function(){
     /*
      * @param {array} barData 
      * @param {integer} startNumber
-     * @prublic
+     * @public
      * @retrun {string} graph
      */
     this.render = function(barData, startNumber){
@@ -22,22 +22,17 @@ const graphBase = function(){
 
         if (barData.length === 0)
             return [];
-
-        if (startNumber > barData.length) {
+        if (startNumber > barData.length)
             startNumber = 0;
-        }
-        if (60 > barData.length - 1) {
+        if (60 > barData.length - 1)
             startNumber = 0;
-        }
         if (60 > ((barData.length - 1) - startNumber)) {
             startNumber = ((barData.length - 1) - 60);
             endNumber = barData.length;
-        } else {
+        } else
             endNumber = startNumber + 60;
-        }
-        if (0 > startNumber) {
+        if (0 > startNumber)
             startNumber = 0;
-        }
         maxNumber = parseInt(barData[0]);
         minNumber = parseInt(barData[0]);
         for (let i = startNumber; barData.length > i; i++) {
@@ -131,7 +126,6 @@ const graphBase = function(){
     let outData = [];
     let perNumber = 0;
     let minus = 0;
-
 };
 
 
